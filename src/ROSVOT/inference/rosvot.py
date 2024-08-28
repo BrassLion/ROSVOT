@@ -17,21 +17,21 @@ from torch.distributed import init_process_group
 import torch.distributed as dist
 import matplotlib.pyplot as plt
 
-from utils.os_utils import safe_path
-from utils.commons.hparams import set_hparams
-from utils.commons.multiprocess_utils import MultiprocessManager
-from utils.commons.dataset_utils import batch_by_size, pad_or_cut_xd, collate_1d_or_2d, build_dataloader
-from utils.commons.ckpt_utils import load_ckpt
-from utils.commons.tensor_utils import move_to_cuda
-from utils.audio import get_wav_num_frames
-from utils.audio.mel import MelNet
-from utils.audio.pitch_utils import norm_interp_f0, denorm_f0, f0_to_coarse, boundary2Interval, save_midi, midi_to_hz
+from ..utils.os_utils import safe_path
+from ..utils.commons.hparams import set_hparams
+from ..utils.commons.multiprocess_utils import MultiprocessManager
+from ..utils.commons.dataset_utils import batch_by_size, pad_or_cut_xd, collate_1d_or_2d, build_dataloader
+from ..utils.commons.ckpt_utils import load_ckpt
+from ..utils.commons.tensor_utils import move_to_cuda
+from ..utils.audio import get_wav_num_frames
+from ..utils.audio.mel import MelNet
+from ..utils.audio.pitch_utils import norm_interp_f0, denorm_f0, f0_to_coarse, boundary2Interval, save_midi, midi_to_hz
 
-from modules.pe.rmvpe import RMVPE
-from data_gen.rosvot_binarizer import align_word
-from tasks.rosvot.dataset import get_mel_len
-from tasks.rosvot.rosvot_utils import bd_to_durs, regulate_real_note_itv, regulate_ill_slur
-from modules.rosvot.rosvot import MidiExtractor, WordbdExtractor
+from ..modules.pe.rmvpe import RMVPE
+from ..data_gen.rosvot_binarizer import align_word
+from ..tasks.rosvot.dataset import get_mel_len
+from ..tasks.rosvot.rosvot_utils import bd_to_durs, regulate_real_note_itv, regulate_ill_slur
+from ..modules.rosvot.rosvot import MidiExtractor, WordbdExtractor
 
 
 def parse_args():

@@ -1,0 +1,34 @@
+[project]
+
+name = "ROSVOT" 
+
+version = "1.0.0"
+
+description = "Robust Singing Voice Transcription and MIDI Extraction"
+
+readme = "README.md"
+
+authors = [
+  {name = "Ruiqi Li" }
+]
+
+dependencies = [
+  "torch",
+  "torchvision",
+  "torchaudio",
+  "librosa",
+  "tqdm",
+  "matplotlib",
+  "pyyaml",
+  "pretty_midi",
+  "pyworld"
+]
+
+[tool.setuptools]
+
+package-dir = {"" = "src"}
+
+[build-system]
+
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta" 
